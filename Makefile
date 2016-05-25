@@ -1,7 +1,7 @@
 CC = g++
 FLAG = -DDEBUG -g -o2 -D_REENTRANT -c
 
-objects = main.o ISimpleList.o IThreadLocal.o INoTrackObject.o CThreadSlotData.o 
+objects = main ISimpleList IThreadLocal INoTrackObject CThreadSlotData 
 
 .PHONY: clean all
 
@@ -10,7 +10,7 @@ all : debug demo
 	@echo "                      Good job!   ~(@^_^@)~"
 	@echo "-------------------------------------------------------------"
 
-debug : $(objects)
+debug : $(addsuffix .o, $(objects))
 	$(CC) $^ -o $@
 
 demo : demo.cpp
