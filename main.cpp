@@ -6,7 +6,7 @@
 #include "INoTrackObject.h"
 #include "CThreadLocal.h"
 
-pthread_mutex_t g_Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t g_Mutex;
 
 struct TagMyThreadData : public INoTrackObject
 {
@@ -26,7 +26,7 @@ void* ThreadFunc(void* p)
 
 int main(int argc, char** argv)
 {
-	//pthread_mutex_init(&g_Mutex, 0);
+	pthread_mutex_init(&g_Mutex, 0);
 
 	static const int num = 10;
 	static int index = 0;
