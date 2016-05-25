@@ -7,7 +7,7 @@ objects = main.o ISimpleList.o IThreadLocal.o INoTrackObject.o CThreadSlotData.o
 
 all : debug demo
 	@echo "-------------------------------------------------------------"
-	@echo "---------   All Works has done!     =)"
+	@echo "                      Good job!   ~(@^_^@)~"
 	@echo "-------------------------------------------------------------"
 
 debug : $(objects)
